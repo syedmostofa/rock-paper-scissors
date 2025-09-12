@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //variable declared to remember computer choice
+        let compChoice;
+        //computer's choice function
+        //generates a random number, which is multiplied by 10
+        //it returns rock if the number is between 0 and 3.33, paper if the number is between 3.33 and 6.66, scissors if the number is between 6.66 and 9.99 
+        function getComputerChoice() {
+            let randNum = 10 * Math.random();
+
+            if (randNum >= 0 && randNum < 3.33) {
+                console.log("Computer choice: Rock");
+                comppChoice = "Rock";
+            }
+            else if (randNum >= 3.33 && randNum < 6.66) {
+                console.log("Computer choice: Paper")
+                compChoice = "Paper";
+            }
+            else {
+                console.log("Computer choice: Scissors");
+                compChoice = "Scissors";
+            }
+        }
+
+
+        //variable declared to remember player's choice
+        let playerChoice;
+        //player's choice function
+        function getPlayerChoice() {
+            playerChoice = prompt("Enter your choice", "Rock/Paper/Scissor");
+            console.log("Player's choice: "+ playerChoice);
+        }
+
+        let humanScore = 0;
+        let computerScore = 0;
+
+        
+    </script>
+</body>
+</html>
