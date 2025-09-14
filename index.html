@@ -4,108 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script>
+    <main>
+        <section>
+            <button id="rock">rock</button>
+            <button id="paper">paper</button>
+            <button id="scissors">scissors</button>
+        </section>
         
-        //computer's choice function
-        //generates a random number, which is multiplied by 10
-        //it returns rock if the number is between 0 and 3.33, paper if the number is between 3.33 and 6.66, scissors if the number is between 6.66 and 9.99 
-        function getComputerChoice() {
-            let randNum = 10 * Math.random();
-
-            if (randNum >= 0 && randNum < 3.33) {
-                console.log("Computer selected: Rock");
-                return "Rock";
-            }
-            else if (randNum >= 3.33 && randNum < 6.66) {
-                console.log("Computer selected: Paper");
-                return "Paper";
-            }
-            else {
-                console.log("Computer selected: Scissors");
-                return "Scissors";
-            }
-        }
-
-        //player's choice function
-        function getPlayerChoice() {
-            let playerChoice = prompt("Enter your choice", "Rock/Paper/Scissor");
-            console.log("Player selected: " + playerChoice);
-            return playerChoice;
-        }
-
-        
-
-
-        function playGame() {
-            let humanScore = 0;
-            let computerScore = 0;
-
-            function playRound(humanChoice, computerChoice) {
-            
-            if (humanChoice == 'Rock') {
-                if (computerChoice == 'Rock') {
-                    console.log("You are tied!");
-                }
-                else if (computerChoice == 'Paper') {
-                    console.log("You lose! Computer selected Paper!");
-                    computerScore++;
-                }
-                else {
-                    console.log("You win! Computer selected Scissors!");
-                    humanScore++;
-                }
-            }
-            else if (humanChoice == 'Paper') {
-                if (computerChoice == 'Rock') {
-                    console.log("You win! Computer selected Rock");
-                    humanScore++;
-                }
-                else if (computerChoice == 'Paper') {
-                    console.log("You are tied!");
-                }
-                else {
-                    console.log("You lose! Computer selected Scissors!");
-                    computerScore++;
-                }
-            }
-            else {
-                if (computerChoice == 'Rock') {
-                    console.log("You lose! Computer selected Rock");
-                    computerScore++;
-                }
-                else if (computerChoice == 'Scissors') {
-                    console.log("You are tied!");
-                }
-                else {
-                    console.log("You win! Computer selected Scissors!");
-                    humanScore++;
-                }
-            }
-        }
-
-        for (let i = 0; i < 5; i++) {
-            const humanSelection = getPlayerChoice();
-            const computerSelection = getComputerChoice();
-
-            playRound(humanSelection, computerSelection);
-        }
-
-        if (humanScore > computerScore) {
-            console.log("YOU WIN!");
-        }
-        else if (humanScore < computerScore) {
-            console.log("COMPUTER WINS!");
-        }
-        else {
-            console.log("BOTH ARE TIED!")
-        }
-
-        }
-        playGame();
-        
-        
-    </script>
+        <div id="results"></div>
+    </main>
 </body>
 </html>
